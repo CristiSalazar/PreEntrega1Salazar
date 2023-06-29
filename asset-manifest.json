@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/PreEntrega1Salazar/static/css/main.32e0c369.css",
+    "main.js": "/PreEntrega1Salazar/static/js/main.59f9372f.js",
+    "index.html": "/PreEntrega1Salazar/index.html",
+    "main.32e0c369.css.map": "/PreEntrega1Salazar/static/css/main.32e0c369.css.map",
+    "main.59f9372f.js.map": "/PreEntrega1Salazar/static/js/main.59f9372f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.32e0c369.css",
+    "static/js/main.59f9372f.js"
+  ]
+}
