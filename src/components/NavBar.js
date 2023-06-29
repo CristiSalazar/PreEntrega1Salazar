@@ -3,11 +3,11 @@ import CartWidget from "./CartWidget/CartWidget"
 function NavBar (){
     return(
         <nav>
-            <h3>Tienda</h3>
+            <h3>Librería "Los Poetas"</h3>
             <div>
-                <button>Poleras</button>
-                <button>Pantalones</button>
-                <button>Camisas</button>
+                <button>Acción</button>
+                <button>Fantasía</button>
+                <button>Drama</button>
             </div>
             <CartWidget/>
         
