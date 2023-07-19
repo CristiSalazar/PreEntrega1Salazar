@@ -1,7 +1,7 @@
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListConainer/ItemListContainer";
 import Contador from "./components/ItemCount/ItemCount";
-
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 
 
@@ -10,7 +10,8 @@ function App() {
   <>
     <NavBar/>
     <ItemListContainer greeting = {"Bienvenidos"}/>
-    <Contador stock={10} onAdd= {(contador) => console.log("cantidad agregada", contador)}/>
+    <ItemDetailContainer/>
+    <Contador stock={10} onAdd= {(contador) => console.log("Cantidad agregada", contador)}/>
     
     <div className="App">
 
