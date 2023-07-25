@@ -1,17 +1,35 @@
-import CartWidget from "./CartWidget/CartWidget"
+import CartWidget from "./CartWidget/CartWidget";
+import { Link, NavLink } from "react-router-dom";
 
-function NavBar (){
-    return(
-        <nav>
-            <h3>Librería "Los Poetas"</h3>
-            <div>
-                <button>Acción</button>
-                <button>Fantasía</button>
-                <button>Drama</button>
-            </div>
-            <CartWidget/>
+const NavBar = () => {
+    return (
+        <header>
+            <Link to= "/"> 
+                <h1>Librería "Los Poetas"</h1>
+            </Link>
+            <nav>
+                <ul>
+                   <li>
+                    <NavLink to= "/">Home</NavLink>
+                   </li>
+
+                   <li>
+                    <NavLink to="/Accion">Acción</NavLink>
+                   </li>
+
+                   <li>
+                    <NavLink to="/Fantasia">Fantasía</NavLink>
+                   </li>
+
+                   <li>
+                    <NavLink to="/Drama">Drama</NavLink>
+                   </li>
+
+                </ul>
+                <CartWidget/>
         
-        </nav>
+            </nav>
+        </header>
     )
 }
 
