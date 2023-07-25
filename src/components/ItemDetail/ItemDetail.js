@@ -1,11 +1,11 @@
-import Contador from "../ItemCount/ItemCount"
+import Contador from "../ItemCount/ItemCount";
 
 const ItemDetail = ({id, nombre, img, precio}) => {
     return(
         <article>
             <header>
                 <h2>
-                    Nombre:{nombre}
+                    Nombre: {nombre}
                 </h2>
             </header>
             <picture>
@@ -20,7 +20,7 @@ const ItemDetail = ({id, nombre, img, precio}) => {
                 </p>
             </section>
             <footer>
-                <Contador onAdd={(Contador) => console.log("Cantidad agregada")}/>
+                <Contador stock={10} onAdd= {(contador) => console.log("Cantidad agregada", contador)}/> 
             </footer>
         </article>
     )
