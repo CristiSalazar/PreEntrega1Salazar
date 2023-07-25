@@ -1,4 +1,4 @@
-const productos = [
+const losProductos = [
     {   id: 1,
         nombre: "Don Quijote de la mancha",
         img: "https://feriachilenadellibro.cl/wp-content/uploads/2023/01/9788419087003.gif",
@@ -22,15 +22,16 @@ const productos = [
 export const getProducts = ()=>{
     return new Promise((resolve) =>{
         setTimeout(()=>{
-            resolve(productos)
+            resolve(losProductos)
         }, 500)
     })
 }
 
-export const getProductsById = (productosId) => {
-    return new Promise((resolve) => {
+export const getProductsById = (id) => {
+    return new Promise(resolve => {
         setTimeout(() => {
-            resolve(productos.find(prod => prod.id === productosId))
+            const producto = losProductos.find(prod => prod.id === id)
+            resolve(producto);
         }, 500)
     })
 }
@@ -38,7 +39,7 @@ export const getProductsById = (productosId) => {
 export const getProductsPorCategoria = (idCategoria) => {
     return new Promise (resolve => {
         setTimeout(() => {
-            const productosCategoria = productos.filter(prod => prod.idCat === idCategoria);
+            const productosCategoria = losProductos.filter(prod => prod.idCat === idCategoria);
             resolve(productosCategoria);
         }, 100)
     })

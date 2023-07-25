@@ -1,5 +1,4 @@
 import Contador from "../ItemCount/ItemCount"
-import { getProducts } from "../../asyncMock"
 
 const ItemDetail = ({id, nombre, img, precio}) => {
     return(
@@ -10,11 +9,14 @@ const ItemDetail = ({id, nombre, img, precio}) => {
                 </h2>
             </header>
             <picture>
-                <img src={img} alt="" />
+                <img src={img} alt={nombre} />
             </picture>
             <section>
                 <p>
-                    precio: {precio}
+                    Precio: ${precio}
+                </p>
+                <p>
+                    Id: {id}
                 </p>
             </section>
             <footer>

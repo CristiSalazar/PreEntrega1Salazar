@@ -4,22 +4,17 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-    const [productos, SetProductos] = useState(null)
+    const [producto, SetProducto] = useState(null)
     const {idItem} = useParams();
 
     useEffect(() => {
         getProductsById(idItem)
-        .then(res => {
-            SetProductos(res)
-        })
-        .catch(error => {
-            console.error(error)
-        })
+            .then(resolve => SetProducto(resolve))
     }, [idItem])
 
     return(
         <div>
-            <ItemDetail {...productos}/>
+            <ItemDetail {...producto}/>
         </div>
     )
 
