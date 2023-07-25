@@ -14,20 +14,23 @@ function App() {
     <BrowserRouter>
       <NavBar/>
         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/Accion" element={<Accion/>}/>
+          <Route path="/" element={<ItemListContainer/>}/>
+          <Route path="/categoria/:idCategoria" element={<ItemListContainer/>}/>
+          <Route path="/item/:idItem" element={<ItemDetailContainer/>}/>
+          <Route path="*" element= {<h1>Página no disponible</h1>}/>
+          {/* <Route path="/Accion" element={<Accion/>}/>
           <Route path="/Fantasia" element={<Fantasia/>}/>
-          <Route path="/Drama" element={<Drama/>}/>
+          <Route path="/Drama" element={<Drama/>}/> */}
         </Routes>
     </BrowserRouter>
 
-    <ItemListContainer greeting = {"Bienvenidos"}/>
-    <ItemDetailContainer/>
+    {/* <ItemListContainer greeting = {"Bienvenidos"}/>
+    <ItemDetailContainer/> */}
     <Contador stock={10} onAdd= {(contador) => console.log("Cantidad agregada", contador)}/>
     
-    <div className="App">
+    {/* <div className="App">
 
-    </div>
+    </div>  */}
   </>  
   );
   

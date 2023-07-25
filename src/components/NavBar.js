@@ -9,7 +9,7 @@ const NavBar = () => {
             </Link>
             <nav>
                 <ul>
-                   <li>
+                   {/* <li>
                     <NavLink to= "/">Home</NavLink>
                    </li>
 
@@ -23,6 +23,12 @@ const NavBar = () => {
 
                    <li>
                     <NavLink to="/Drama">Drama</NavLink>
+                   </li> */}
+                   <li>
+                    <NavLink to="/categoria/2">Fantasía</NavLink>
+                   </li>
+                   <li>
+                    <NavLink to="/categoria/3">Acción</NavLink>
                    </li>
 
                 </ul>

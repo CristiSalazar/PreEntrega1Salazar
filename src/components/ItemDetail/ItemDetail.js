@@ -1,11 +1,12 @@
 import Contador from "../ItemCount/ItemCount"
+import { getProducts } from "../../asyncMock"
 
 const ItemDetail = ({id, nombre, img, precio}) => {
     return(
         <article>
             <header>
                 <h2>
-                    {nombre}
+                    Nombre:{nombre}
                 </h2>
             </header>
             <picture>
@@ -13,14 +14,15 @@ const ItemDetail = ({id, nombre, img, precio}) => {
             </picture>
             <section>
                 <p>
-                    Precio: {precio}
+                    precio: {precio}
                 </p>
             </section>
             <footer>
-                <Contador onAdd={(contador) => console.log("Cantidad agregada")}/>
+                <Contador onAdd={(Contador) => console.log("Cantidad agregada")}/>
             </footer>
         </article>
     )
 }
+
 
 export default ItemDetail
