@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const Item = ({id, nombre, img, precio}) => {
+const Item = ({id, nombre, img, precio, stock}) => {
     return(
         <article>
             <header>
@@ -11,6 +11,7 @@ const Item = ({id, nombre, img, precio}) => {
             </picture>
             <section>
                 <p>Precio: ${precio}</p>
+                <p>Stock: {stock}</p>
                 <p>Id: {id}</p>
             </section>
             <footer>

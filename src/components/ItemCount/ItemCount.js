@@ -1,28 +1,36 @@
 import { useState } from "react"
 
-function Contador (props){
-    let [contador, setContador] = useState(0) 
 
-    function handleRestar(){
-        if (contador > 0){
-            setContador(contador - 1)
+const Contador = ({stock, funcionAgregar}) => {
+    const [contador, setContador] = useState(0)
+    
+
+    const handleSumar = () => {
+        if(contador < stock) {
+            setContador(contador + 1);
+        }
+    } 
+
+    const handleRestar = () => {
+        if(contador > 0) {
+            setContador(contador - 1);
         }
     }
-    function handleSumar(){
-        if (contador < props.stock){
-            setContador(contador + 1)
-        }
-    }
-    function handleOnAdd(){
-        props.onAdd(contador)
-    }
-    return(
+
+
+  return (
+    <>
         <div>
-            <p>{contador}</p>
-            <button onClick={handleRestar}>-</button>
-            <button onClick={handleSumar}>+</button>
-            <button onClick={handleOnAdd}>Agregar al carrito</button>
+            <button onClick={handleRestar}> - </button>
+            <p> {contador} </p>
+            <button onClick={handleSumar}> + </button>
         </div>
-    )
+        <button onClick={()=> funcionAgregar(contador)}>Agregar Producto</button>
+    </>
+  )
 }
+
+
+
+
 export default Contador

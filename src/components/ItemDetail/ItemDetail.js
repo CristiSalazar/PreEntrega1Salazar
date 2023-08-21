@@ -1,6 +1,25 @@
 import Contador from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
+import {useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+
 
 const ItemDetail = ({id, nombre, img, precio}) => {
+    const [cantidadAgregada, setCantidadAgregada] = useState(0);
+
+    const {agregarProducto} = useContext(CartContext)
+
+    const manejadorCantidad = (cantidad) => {
+        setCantidadAgregada(cantidad);
+        console.log("productos agregados:" + cantidad)
+        
+        const item = {id, nombre, precio};
+
+        agregarProducto(item, cantidad);
+    }
+    
+    
     return(
         <article>
             <header>
@@ -20,7 +39,9 @@ const ItemDetail = ({id, nombre, img, precio}) => {
                 </p>
             </section>
             <footer>
-                <Contador stock={10} onAdd= {(contador) => console.log("Cantidad agregada", contador)}/> 
+                {   
+                    cantidadAgregada > 0 ? (<Link to="/cart">Finalizar compra</Link>) : (<Contador stock={10} funcionAgregar= {manejadorCantidad}/>)
+                }
             </footer>
         </article>
     )
